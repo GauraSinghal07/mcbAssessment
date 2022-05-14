@@ -1,0 +1,33 @@
+
+  <div class="container">
+<div class="container-fluid align-middle login-form row g-0">
+    <mat-card class="col-md-6 offset-md-3 mat-card">
+        <mat-card-content>
+  <form (ngSubmit)="loginFormGroup.valid?login():''" [formGroup]="loginFormGroup">
+    <div class="mb-3 text-center">
+        <mat-form-field class="width-80" >
+            <mat-label>User Name</mat-label>
+            <mat-icon matPrefix>person</mat-icon>
+            <input matInput type="text" formControlName="username" required>
+            <mat-hint>Your Company Provided Username</mat-hint>
+          </mat-form-field>
+
+    </div>
+    <div class="mb-3 text-center">
+        <mat-form-field class="width-80" >
+            <mat-label>Passowrd</mat-label>
+            <mat-icon matPrefix>lock</mat-icon>
+            <input matInput type="password" formControlName="password" required>
+          </mat-form-field>
+    </div>
+
+    <div class="text-center width-80">
+        <button mat-raised-button type="submit" color="primary">Login</button>
+    
+    </div>
+  </form>
+</mat-card-content>
+</mat-card>
+  </div>
+
+</div>

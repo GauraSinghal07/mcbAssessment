@@ -1,0 +1,39 @@
+
+  <div class="container">
+    <div class="container-fluid align-middle login-form row g-0">
+        <mat-card class="col-md-6 offset-md-3 mat-card">
+            <mat-card-content>
+      <form [formGroup]="fileForm" (ngSubmit)="fileForm.valid?sendFile():''">
+        <div class="mb-3 text-center">
+            <mat-form-field class="width-80" >
+                <mat-label>File Type</mat-label>
+                <mat-icon matPrefix>description</mat-icon>
+                <mat-select required formControlName="type">
+                  <mat-option value="PERSONAL">Personal</mat-option>
+                  <mat-option value="ADDRESS">Address</mat-option>
+                  <mat-option value="BUSINESS">Business</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+        </div>
+        <div class="mb-3 text-center">
+            <mat-form-field class="width-80" >
+                <mat-label>File</mat-label>
+                <mat-icon matPrefix>lock</mat-icon>
+                <input matInput type="text"   readonly="true" formControlName="fileName" required>
+              <button mat-raised-button matSuffix (click)="fileHandler.click()" >
+                <mat-icon >attach_file</mat-icon> Select File</button>
+              </mat-form-field>
+              <input type="file" (change)="uploadFile($event.target)" accept=".pdf,.PDF,.png,.jpeg,.jpg" hidden #fileHandler>
+        </div>
+
+        <div class="text-center width-80">
+            <button mat-raised-button type="submit" ><mat-icon>upload_file</mat-icon> Upload FIle</button>
+
+        </div>
+      </form>
+    </mat-card-content>
+    </mat-card>
+      </div>
+
+    </div>
